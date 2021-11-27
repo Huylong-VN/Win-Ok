@@ -40,10 +40,15 @@
                         success: function (response) {
                             console.log(response);
                             if (response === true) {
-                                window.swal("Sign Up Success", "Now please log in", "success",
-                                    {
-                                        button: "OK",
-                                    });
+                                swal({
+                                    title: "Sign up Success!",
+                                    text: "Welcome to Group 2",
+                                    icon: "success",
+                                    type: "OK"
+                                }).then(function () {
+                                    window.location = "login";
+                                });
+
                             }
                             else {
                                 window.swal("Sign Up Fail", "Please try again!", "success", {

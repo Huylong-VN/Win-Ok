@@ -17,8 +17,8 @@
         <h2 class="inactive underlineHover"><a href="Register">Sign Up</a></h2>
 
         <!-- Icon -->
-        <div class="fadeIn first">
-            <img src="" id="icon" alt="User Icon" />
+        <div class="fadeIn first" >
+            <img src="" id="icon" alt="User Icon"/> 
         </div>
 
         <!-- Login Form -->
@@ -41,9 +41,13 @@
                         success: function (response) {
                             console.log(response);
                             if (response.isSuccessed === true) {
-                                window.swal("Login Success", "Welcome to Group 2", "success", {
-                                    button: "OK",
-
+                                swal({
+                                    title: "Login Success",
+                                    text: "Welcome to Group 2!",
+                                    icon: "success",
+                                    type: "OK"
+                                }).then(function () {
+                                    window.location = "../home/index";
                                 });
                             }
 
@@ -55,10 +59,11 @@
                         error: function (err) {
                             console.log(err);
                             if (err.status === 400) {
-                                window.swal("Login Fail", "Please try again!", "success", {
+                                window.swal("Login Fail", "Please try again!", "success",
+                                {
                                     button: "OK",
-
                                 });
+                                
                             }
                             // Nếu như sai mật khẩu hoặc tài khoản nó sẽ vào đây... Nếu nó vào đây
                             // Đạt phải thông báo cho người dùng là sai nhập mật
