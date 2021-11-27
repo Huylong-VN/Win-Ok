@@ -1,14 +1,19 @@
 ﻿@model WebApplication.WebApi.ViewModels.Users.UserLoginRequest;
 @{
     ViewData["Title"] = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-<ul class="breadcrumb">
-    <li><a href="/">Home</a> <span class="divider">/</span></li>
-    <li class="active">Login</li>
-</ul>
-<h3> Login</h3>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+</head>
+<body>
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
@@ -17,8 +22,8 @@
         <h2 class="inactive underlineHover"><a href="Register">Sign Up</a></h2>
 
         <!-- Icon -->
-        <div class="fadeIn first" >
-            <img src="~/image/icon.png" width="40px" height="40px" alt="User Icon"/> 
+        <div class="fadeIn first">
+            <img src="~/image/icon.png" width="40px" height="40px" alt="User Icon" />
         </div>
 
         <!-- Login Form -->
@@ -60,10 +65,10 @@
                             console.log(err);
                             if (err.status === 400) {
                                 window.swal("Login Fail", "Please try again!", "success",
-                                {
-                                    button: "OK",
-                                });
-                                
+                                    {
+                                        button: "OK",
+                                    });
+
                             }
                             // Nếu như sai mật khẩu hoặc tài khoản nó sẽ vào đây... Nếu nó vào đây
                             // Đạt phải thông báo cho người dùng là sai nhập mật
@@ -80,3 +85,10 @@
 
     </div>
 </div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
