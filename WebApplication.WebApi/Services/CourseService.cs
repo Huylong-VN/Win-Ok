@@ -128,7 +128,7 @@ namespace WebApplication.WebApi.Services
         public async Task<CourseVm> UpdateAsync(UpdateCourseDto dto)
         {
             var course = await _managementDbContext.Courses.FindAsync(dto.Id);
-            if (course != null) return null;
+            if (course == null) return null;
             course.Name = dto.Name;
             course.UpdateTime = DateTime.Now;
             course.Description = dto.Description;
